@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +20,8 @@
 
     <!-- JavaScript (Defer loading for performance) -->
     <script src="script.js" defer></script>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.37/build/spline-viewer.js"></script>
+
 </head>
 <body>
 
@@ -54,23 +57,21 @@
     <main class="main">
         <!-- ==================== HOME (HERO) ==================== -->
         <section class="home section" id="home">
-            <div class="home__container container">
-                <div class="home__data-left">
-                    <span class="home__greeting">Hi, I'm</span>
-                    <h1 class="home__name">Avijit<br>Saha</h1>
-                    <span class="home__profession">Web Developer</span>
-                </div>
-                <div class="home__data-right">
-                    <p class="home__intro">
-                        A passionate B.Tech CSE student specializing in Web Development. I thrive in the chaos of ever-changing technologies and complex challenges.
-                    </p>
-                    <p class="home__skills-list">
-                        Wielding a full force of the web dev arsenal (HTML5, CSS3, JS, Bootstrap, ReactJS, NodeJS, MongoDB, and a sprinkle of problem-solving magic).
-                    </p>
-                    <a href="CV.pdf" download class="button home__button">Download Resume</a>
-                </div>
+    <div class="home__container container">
+        <div class="home__data-left">
+            <span class="home__greeting">Hi, I'm</span>
+            <h1 class="home__name">Avijit<br>Saha</h1>
+            <span class="home__profession">Web Developer</span>
+            <a href="CV.pdf" download class="button home__button">Resume</a>
+        </div>
+        <div class="home__data-right">
+                     <!-- Add Spline Viewer Here -->
+            <div class="home__spline-container">
+                <spline-viewer url="https://prod.spline.design/q77O41SzRyj4U6UF/scene.splinecode"></spline-viewer>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
         <!-- ==================== ABOUT ME ==================== -->
         <section class="about section" id="about">
@@ -156,9 +157,10 @@
                  <h2 class="section__title">Get in Touch</h2>
                  <p class="contact__message">I'm currently open to new opportunities and collaborations. Feel free to send me a message about anything you want to discuss!</p>
                  <div class="contact__info">
-                     <a href="mailto:itsavijitsaha@gmail.com" class="contact__link"><i class="fa-solid fa-envelope"></i> itsavijitsaha@gmail.com</a>
+                     <!-- <a href="mailto:itsavijitsaha@gmail.com" class="contact__link"><i class="fa-solid fa-envelope"></i> itsavijitsaha@gmail.com</a> -->
                  </div>
-                 <form action="#" class="contact__form">
+                 <form action="https://api.web3forms.com/submit" method="POST" class="contact__form">
+                     <input type="hidden" name="access_key" value="76efe9ce-a69c-4842-95a2-cfeaf1e0042c">
                     <input type="text" name="name" placeholder="Your Name" class="contact__input" required>
                     <input type="email" name="email" placeholder="Your Email" class="contact__input" required>
                     <textarea name="message" placeholder="Your Message" class="contact__input" rows="5" required></textarea>
