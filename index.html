@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avijit Saha | Web Developer</title>
+    <meta name="description" content="Personal portfolio of Avijit Saha, a B.Tech CSE student specializing in Web Development.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JavaScript (Defer loading for performance) -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                    <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__actions">
+                 <div class="nav__toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Floating Avatar (Initially hidden) -->
+    <a href="#home" id="floating-avatar">
+        <img src="avijit.png" alt="Avijit Saha">
+    </a>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="main">
+        <!-- ==================== HOME (HERO) ==================== -->
+        <section class="home section" id="home">
+            <div class="home__container container">
+                <div class="home__data-left">
+                    <span class="home__greeting">Hi, I'm</span>
+                    <h1 class="home__name">Avijit<br>Saha</h1>
+                    <span class="home__profession">Web Developer</span>
+                </div>
+                <div class="home__data-right">
+                    <p class="home__intro">
+                        A passionate B.Tech CSE student specializing in Web Development. I thrive in the chaos of ever-changing technologies and complex challenges.
+                    </p>
+                    <p class="home__skills-list">
+                        Wielding a full force of the web dev arsenal (HTML5, CSS3, JS, Bootstrap, ReactJS, NodeJS, MongoDB, and a sprinkle of problem-solving magic).
+                    </p>
+                    <a href="CV.pdf" download class="button home__button">Download Resume</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== ABOUT ME ==================== -->
+        <section class="about section" id="about">
+            <div class="about__container container">
+                <img src="avijit.png" alt="About Avijit Saha" class="about__img">
+                <div class="about__data">
+                    <h2 class="section__title about__title">About Me</h2>
+                    <p class="about__description">
+                        I am a B.Tech CSE student passionate about coding, problem-solving, and exploring emerging technologies. I aim to build innovative and impactful solutions through continuous learning and creativity.
+                    </p>
+                    <b>
+                    
+                    <!-- Education details are now part of the About section -->
+                    <div class="about__education">
+                        <h3 class="about__education-title">Education</h3>
+                        <div class="education__card">
+                            <p><strong>University Name:</strong> <a href="https://www.brainwareuniversity.ac.in/" target="_blank" class="about__link">Brainware University</a></p>
+                            <p><strong>Course:</strong> B.Tech CSE</p>
+                            <p><strong>Course Duration:</strong> 2023-2027</p>
+                            <p><strong>CGPA:</strong> 9.1</p>
+                        </div>
+                    </div>
+
+                    <!-- Experience section added here -->
+                    <div class="about__experience">
+                        <h3 class="about__experience-title">Experience</h3>
+                        <div class="experience__card">
+                            <p><strong>Company Name:</strong> <a href="https://www.agnirath.com/" target="_blank" class="about__link">Agnirath Aerospace and Defence Research</a></p>
+                            <p><strong>Internship topic:</strong> Development of <a href="cubesat.pptx" class="about__link">Cubesat</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SKILLS ==================== -->
+        <section class="skills section" id="skills">
+            <div class="skills__container container">
+                <h2 class="section__title">My Skills</h2>
+                <div class="skills__grid">
+                    <div class="skill__item"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
+                    <div class="skill__item"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
+                    <div class="skill__item"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+                    <div class="skill__item"><i class="fa-brands fa-react"></i><span>React</span></div>
+                    <div class="skill__item"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
+                    <div class="skill__item"><i class="fa-solid fa-database"></i><span>Databases</span></div>
+                    <div class="skill__item"><i class="fa-brands fa-git-alt"></i><span>Git & GitHub</span></div>
+                    <div class="skill__item"><i class="fa-solid fa-lightbulb"></i><span>Problem Solving</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PROJECTS ==================== -->
+        <section class="projects section" id="projects">
+            <div class="projects__container container">
+                <h2 class="section__title">My Projects</h2>
+                <div class="projects__grid">
+                    <!-- Project 1 -->
+                    <div class="project__card">
+                        <h3 class="project__title">Project Title One</h3>
+                        <p class="project__description">A brief description of the project. Mention the key technologies used (e.g., React, Node.js, Express, MongoDB) and the main problem it solves or its core functionality.</p>
+                        <div class="project__links">
+                            <a href="#" target="_blank" class="project__link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                            <a href="#" target="_blank" class="project__link"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="project__card">
+                        <h3 class="project__title">Project Title Two</h3>
+                        <p class="project__description">A brief description of the project. Mention the key technologies used (e.g., HTML, CSS, Vanilla JS, API integration) and the main problem it solves or its core functionality.</p>
+                        <div class="project__links">
+                            <a href="#" target="_blank" class="project__link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                            <a href="#" target="_blank" class="project__link"><i class="fa-brands fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CONTACT ==================== -->
+        <section class="contact section" id="contact">
+            <div class="contact__container container">
+                 <h2 class="section__title">Get in Touch</h2>
+                 <p class="contact__message">I'm currently open to new opportunities and collaborations. Feel free to send me a message about anything you want to discuss!</p>
+                 <div class="contact__info">
+                     <a href="mailto:itsavijitsaha@gmail.com" class="contact__link"><i class="fa-solid fa-envelope"></i> itsavijitsaha@gmail.com</a>
+                 </div>
+                 <form action="#" class="contact__form">
+                    <input type="text" name="name" placeholder="Your Name" class="contact__input" required>
+                    <input type="email" name="email" placeholder="Your Email" class="contact__input" required>
+                    <textarea name="message" placeholder="Your Message" class="contact__input" rows="5" required></textarea>
+                    <button type="submit" class="button">Send Message</button>
+                 </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__socials">
+                <a href="https://www.linkedin.com/in/avijit-saha-9a5409363?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="footer__social-link"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" target="_blank" class="footer__social-link"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <p class="footer__copy">&copy; 2025 Avijit Saha. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,510 @@
+/* ==================== VARIABLES ==================== */
+:root {
+    --header-height: 4rem;
+
+    /* Dark Theme Colors (Orange Accent) */
+    --primary-color: #E87A5D;
+    --primary-color-alt: #E96A49; 
+    --title-color: #EAEAEA;
+    --text-color: #B0B0B0;
+    --body-color: #1A1A1A; /* Slightly lighter than pure black */
+    --container-color: #242424;
+    --border-color: #333333;
+    --text-color-light: #FFFFFF;
+
+    /* Font */
+    --body-font: 'Roboto', sans-serif;
+    --h1-font-size: 6rem;
+    --h2-font-size: 1.75rem;
+    --normal-font-size: 1rem;
+}
+
+/* ==================== BASE ==================== */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+h1, h2, h3 {
+    color: var(--title-color);
+    font-weight: 700;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==================== REUSABLE CSS CLASSES ==================== */
+.section {
+    padding: 6rem 1rem 2rem;
+}
+
+.section__title {
+    font-size: var(--h2-font-size);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.container {
+    max-width: 1120px; /* Wider container for this layout */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1.25rem 2.5rem;
+    border-radius: .5rem;
+    font-weight: 700;
+    transition: .3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.button:hover {
+    background-color: var(--primary-color-alt);
+}
+
+/* ==================== HEADER & NAV ==================== */
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: transparent;
+    transition: background-color 0.4s;
+}
+
+/* This class is added on scroll */
+.scroll-header {
+    background-color: var(--body-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: flex-end; /* Pushes nav to the right */
+    align-items: center;
+}
+
+.nav__list {
+    display: flex;
+    column-gap: 2.5rem;
+}
+
+.nav__link {
+    /* Set to light color for transparent header */
+    color: var(--text-color-light);
+    font-weight: 500;
+    transition: .3s;
+}
+
+/* Changes link color when header is solid */
+.scroll-header .nav__link {
+    color: var(--title-color);
+}
+
+
+.nav__link:hover, .nav__link.active-link {
+    color: var(--primary-color);
+}
+
+/* Ensures active link color is correct on solid header */
+.scroll-header .nav__link.active-link {
+    color: var(--primary-color);
+}
+
+.nav__actions {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.nav__toggle {
+    display: none;
+    cursor: pointer;
+    width: 28px;
+    height: 21px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nav__toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    /* Set to light color for transparent header */
+    background-color: var(--text-color-light);
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Changes hamburger color when header is solid */
+.scroll-header .nav__toggle span {
+     background-color: var(--title-color);
+}
+
+.nav__toggle.open span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.nav__toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.nav__toggle.open span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ==================== FLOATING AVATAR ==================== */
+#floating-avatar {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .4s ease-in-out;
+    border: 2px solid var(--border-color);
+}
+
+#floating-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#floating-avatar.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ==================== HOME ==================== */
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 2rem 1rem;
+    background-image: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url(bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.home__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    /* Increased gap to move description right */
+    gap: 28rem;
+}
+
+.home__data-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.home__greeting {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.home__name {
+    font-size: var(--h1-font-size);
+    font-weight: 900;
+    color: var(--text-color-light);
+    line-height: 1;
+    margin: .5rem 0;
+}
+
+.home__profession {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.home__data-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.home__intro, .home__skills-list {
+    line-height: 1.7;
+    max-width: 450px;
+    color: var(--text-color-light);
+    font-size: 1.1rem;
+    /* Justified text alignment */
+    text-align: justify;
+}
+
+.home__button {
+    margin-top: 1rem;
+}
+
+/* ==================== Other Sections ==================== */
+.about, .skills, .projects {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: calc(var(--header-height) + 3rem);
+    padding-bottom: 3rem;
+}
+.about__container, .skills__container, .projects__container {
+    width: 100%;
+}
+.about__container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    align-items: center;
+    gap: 3rem;
+}
+.about__img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    justify-self: center;
+    border: 3px solid var(--border-color);
+}
+.about__title {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+.about__description {
+    line-height: 1.7;
+    text-align: justify;
+    margin-bottom: 20px; /* Added space after about text */
+}
+.about__education {
+    margin-bottom: 20px; /* Added space after education section */
+}
+.skills__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+}
+.skill__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    padding: 1.5rem 1rem;
+    background-color: var(--container-color);
+    border-radius: .5rem;
+    border: 1px solid var(--border-color);
+    width: 100%;
+}
+.skill__item i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+.projects__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.project__card {
+    background-color: var(--container-color);
+    padding: 2rem;
+    border-radius: .5rem;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+.project__title {
+    margin-bottom: .75rem;
+}
+.project__description {
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+.project__links {
+    display: flex;
+    gap: 1rem;
+}
+.project__link {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 500;
+}
+.project__link:hover {
+    color: var(--primary-color-alt);
+}
+.contact__container {
+    max-width: 600px;
+    text-align: center;
+}
+.contact__message {
+    margin-bottom: 1rem;
+}
+.contact__info {
+    margin-bottom: 2rem;
+}
+.contact__link {
+    font-size: 1.1rem;
+}
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.contact__input {
+    width: 100%;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: 1px solid var(--border-color);
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--container-color);
+    color: var(--title-color);
+}
+textarea.contact__input {
+    resize: vertical;
+}
+
+/* ==================== FOOTER ==================== */
+.footer {
+    background-color: var(--container-color);
+    border-top: 1px solid var(--border-color);
+}
+
+.footer__container {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer__socials {
+    margin-bottom: 1rem;
+}
+
+.footer__social-link {
+    font-size: 1.5rem;
+    margin: 0 .75rem;
+}
+
+.footer__social-link:hover {
+    color: var(--primary-color-alt);
+}
+
+.footer__copy {
+    font-size: .9rem;
+    color: var(--text-color);
+}
+
+/* ==================== MEDIA QUERIES ==================== */
+@media screen and (max-width: 992px) {
+    :root {
+        --h1-font-size: 4.5rem;
+    }
+    .home__container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+    .home__data-left, .home__data-right {
+        align-items: center;
+    }
+    .about__container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    .about__img {
+        width: 280px;
+        height: 280px;
+    }
+    .about__data {
+        text-align: center;
+    }
+    .about__title {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        --h1-font-size: 3.5rem;
+    }
+    /* Adjusted nav layout for logo removal */
+    .nav {
+        justify-content: flex-end;
+    }
+    .nav__menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: var(--body-color);
+        padding: 6rem 2rem 2rem;
+        transition: .4s;
+    }
+    .nav__list {
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+    }
+    .nav__link, .show-menu .nav__logo, .show-menu .nav__toggle span {
+        color: var(--title-color);
+    }
+    .show-menu .nav__toggle span {
+        background-color: var(--title-color);
+    }
+    .nav__toggle {
+        display: flex;
+        z-index: 101;
+        /* Position toggle on left when nav menu is on right */
+        position: absolute;
+        left: 1.5rem;
+    }
+    .show-menu {
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    :root {
+        --h1-font-size: 3rem;
+    }
+    .about__img {
+        width: 220px;
+        height: 220px;
+    }
+}
