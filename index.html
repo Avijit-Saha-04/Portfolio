@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avijit Saha | Web Developer</title>
     <meta name="description" content="Personal portfolio of Avijit Saha, a B.Tech CSE student specializing in Web Development.">
-
+     <!--Fevicon-->
+     <link rel="icon" type="image/png" href="favicon.png">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,7 +57,7 @@
     <!-- ==================== MAIN CONTENT ==================== -->
     <main class="main">
         <!-- ==================== HOME (HERO) ==================== -->
-        <section class="home section" id="home">
+        <!-- <section class="home section" id="home">
     <div class="home__container container">
         <div class="home__data-left">
             <span class="home__greeting">Hi, I'm</span>
@@ -66,15 +67,43 @@
         </div>
         <div class="home__data-right">
                      <!-- Add Spline Viewer Here -->
-            <div class="home__spline-container">
+            <!-- <div class="home__spline-container">
                 <spline-viewer url="https://prod.spline.design/q77O41SzRyj4U6UF/scene.splinecode"></spline-viewer>
             </div>
         </div>
     </div>
+</section> -->
+
+<section class="home section" id="home">
+  <div class="home__container container grid">
+    
+    <!-- Left Content -->
+    <div class="home__data-left">
+      <!-- your text content here -->
+       <span class="home__greeting">Hi, I'm</span>
+            <h1 class="home__name">Avijit<br>Saha</h1>
+            <span class="home__profession">Web Developer</span>
+            <a href="CV.pdf" download class="button home__button">Resume</a>
+    </div>
+
+    <!-- Desktop-only Spline -->
+    <div class="home__data-right desktop-spline">
+      <div class="home__spline-container">
+        <spline-viewer url="https://prod.spline.design/q77O41SzRyj4U6UF/scene.splinecode"></spline-viewer>
+      </div>
+    </div>
+
+  </div>
 </section>
 
         <!-- ==================== ABOUT ME ==================== -->
         <section class="about section" id="about">
+<!-- Mobile-only Spline Viewer -->
+<div class="about__spline-container mobile-spline">
+    <spline-viewer url="https://prod.spline.design/q77O41SzRyj4U6UF/scene.splinecode"></spline-viewer>
+</div>
+
+
             <div class="about__container container">
                 <img src="avijit.png" alt="About Avijit Saha" class="about__img">
                 <div class="about__data">
@@ -105,6 +134,7 @@
                     </div>
                 </div>
             </div>
+
         </section>
 
         <!-- ==================== SKILLS ==================== -->
